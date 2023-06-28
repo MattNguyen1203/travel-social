@@ -1,11 +1,17 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { createBrowserHistory } from "history";
 import { publicRoutes } from "./routes";
-i;
+import { useDispatch, useSelector } from "react-redux";
+import { getInfoUser } from "./store/slices/authSlice";
 
 function App() {
   const history = createBrowserHistory();
+  const dispatch = useDispatch();
+  const { info, isLogin } = useSelector((state) => state.auth);
+  useEffect(() => {
+    if (isLogin) dispatch(getInfoUser());
+  }, []);
 
   return (
     <Router history={history}>
@@ -37,8 +43,17 @@ function App() {
                 {childArr !== undefined &&
                   childArr.map((item, index) => {
                     const Child = item.component;
+                    const ChildLayout = item.layout ? item.layout : Fragment;
                     return (
-                      <Route key={index} path={item.path} element={<Child />} />
+                      <Route
+                        key={index}
+                        path={item.path}
+                        element={
+                          <ChildLayout>
+                            <Child />
+                          </ChildLayout>
+                        }
+                      />
                     );
                   })}
               </Route>

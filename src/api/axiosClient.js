@@ -2,9 +2,10 @@
 import axios from "axios";
 
 // Set up default config for http requests here
-
+export const source = axios.CancelToken.source();
 const axiosClient = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
+  // cancelToken: source.token,
   headers: {
     "content-type": "application/json",
   },
@@ -19,9 +20,9 @@ axiosClient.interceptors.request.use(async (config) => {
 });
 axiosClient.interceptors.response.use(
   (response) => {
-    if (response && response.data) {
-      return response.data;
-    }
+    // if (response && response.data) {
+    //   return response.data;
+    // }
     return response;
   },
   function (error) {

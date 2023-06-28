@@ -5,7 +5,7 @@ const cx = classNames.bind(styles);
 const Button = (props) => {
   const { className, type, children } = props;
   return (
-    <button className={className} type={type}>
+    <button className={cx(className)} type={type}>
       {children}
     </button>
   );

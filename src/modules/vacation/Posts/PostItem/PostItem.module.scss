@@ -1,18 +1,13 @@
 .wrapper {
-  background: #282828;
   padding: 2rem 0;
   border-radius: 15px;
+  background: #282828;
 
-  header,
-  footer {
+  header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
-  }
-
-  footer {
-    padding: 0 5rem;
   }
 
   main {
@@ -36,16 +31,18 @@
 
   .username-container {
     line-height: 1.5;
-    .fullname {
-      font-weight: 400;
-      font-size: 1.6rem;
-    }
 
     .username {
-      font-style: italic;
-      font-weight: 300;
-      font-size: 1.3rem;
+      font-weight: 500;
+      font-size: 1.7rem;
     }
+  }
+
+  .moment {
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-style: italic;
+    color: rgb(250, 215, 215);
   }
 }
 // Description
@@ -53,13 +50,21 @@
   font-size: 1.7rem;
   line-height: 1.8;
   text-align: justify;
+  margin-bottom: 2rem;
 }
 
-.react,
-.comment,
-.view {
+//img container
+
+.img-container {
+  // width: 100%;
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-size: 1.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr;
+  // grid-template-rows: 1fr 1fr;
+  gap: 1.5rem;
+  img {
+    max-width: 100%;
+  }
 }

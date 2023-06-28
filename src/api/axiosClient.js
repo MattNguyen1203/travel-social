@@ -2,9 +2,10 @@
 import axios from "axios";
 
 // Set up default config for http requests here
-
+export const source = axios.CancelToken.source();
 const axiosClient = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
+  // cancelToken: source.token,
   headers: {
     "content-type": "application/json",
   },

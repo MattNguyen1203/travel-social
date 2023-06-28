@@ -1,6 +1,6 @@
 import styles from "./Header.module.scss";
 import classNames from "classnames/bind";
-import logoImg from "~/images/Vector.png";
+import images from "~/images";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import {
@@ -9,6 +9,7 @@ import {
   FolderOpenOutlined,
   BellOutlined,
 } from "@ant-design/icons";
+import Image from "~/components/Image/Image";
 
 const cx = classNames.bind(styles);
 const Header = ({ children }) => {
@@ -40,7 +41,11 @@ const Header = ({ children }) => {
       <div className={cx("wrapper")}>
         <div className={cx("nav")}>
           <div className={cx("nav-logo")}>
-            <img src={logoImg} className={cx("nav-logo-img")} alt="????"></img>
+            <Image
+              src={images.Vector}
+              className={cx("nav-logo-img")}
+              alt="????"
+            />
           </div>
           <div className={cx("nav-left")}>
             <div className={cx("nav-search")}>

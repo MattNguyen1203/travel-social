@@ -1,15 +1,11 @@
-.wrapper {
-  display: flex;
-  flex: 1;
-  gap: 10rem;
-  padding: 0 5rem;
-  justify-content: space-between;
-}
 // Css sidebar
 .sidebar {
-  width: 25%;
-  min-width: 15 0px;
-  height: max-content;
+  position: fixed;
+  top: calc(10vh + 2.6rem);
+  left: 8rem;
+  width: 20%;
+  min-width: 250px;
+  min-height: 70vh;
   border-radius: 30px;
   background: linear-gradient(
     180deg,
@@ -95,18 +91,38 @@
   margin-bottom: 2rem;
   text-align: center;
   font-weight: 400;
-  font-size: 2.2rem;
+  font-size: 2rem;
   letter-spacing: 1px;
+
+  .title-icon {
+    margin-left: 1rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
 }
 
 .vacation-info {
   line-height: 2;
+
+  .vacation-name {
+    display: flex;
+    align-items: center;
+    padding: 0 1.2rem;
+    span {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      margin-left: 1.6rem;
+    }
+  }
+
   span {
     font-size: 1.5rem;
     font-style: italic;
     font-weight: 200;
     letter-spacing: 1.5px;
   }
+
   .icon {
     width: 4rem;
     margin-right: 2rem;
@@ -133,8 +149,3 @@
 }
 
 //CSS content
-.content {
-  display: flex;
-  flex: 1;
-  gap: 30px;
-}

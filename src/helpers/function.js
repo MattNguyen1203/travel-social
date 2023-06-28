@@ -7,3 +7,10 @@ export function validateSpace(value, ctx) {
 
   return true;
 }
+
+export function getDate(str) {
+  if (str) {
+    const result = str.slice(0, str.indexOf("T"));
+    return result;
+  }
+}

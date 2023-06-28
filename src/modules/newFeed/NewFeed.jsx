@@ -3,6 +3,7 @@ import classNames from "classnames/bind";
 import styles from "./NewFeed.module.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Image from "~/components/Image/Image";
 // import Preloader from "../Preloader/Preloader";
 
 const NewFeed = () => {
@@ -46,12 +47,12 @@ const NewFeed = () => {
           {vacations.map((vacation) => (
             <li key={vacation._id}>
               {/* <div>{vacation.authorInfo._id}</div> */}
-              <img src={vacation.authorInfo.avatar} alt="?" />
+              <Image src={vacation.authorInfo.avatar} alt="?" />
               <div>{vacation.authorInfo.username}</div>
               <div>
                 {vacation.startingTime} - {vacation.endingTime}
               </div>
-              <img src={vacation.cover} alt="???" />
+              <Image src={vacation.cover} alt="???" />
               <div>{vacation.views}</div>
               <div>{vacation.likes}</div>
               <div>{vacation.comments}</div>

@@ -4,6 +4,7 @@ import Loading from "../Loading/Loading";
 import authAPI from "~/api/authAPI";
 import styles from "./Avatar.module.scss";
 import classNames from "classnames/bind";
+import Image from "../Image/Image";
 
 const cx = classNames.bind(styles);
 const getBase64 = (img, callback) => {
@@ -53,14 +54,7 @@ const Avatar = ({ avatar }) => {
       beforeUpload={beforeUpload}
     >
       {imageUrl ? (
-        <img
-          src={imageUrl}
-          alt="avatar"
-          style={{
-            width: "100%",
-          }}
-          className={cx("avatar")}
-        />
+        <Image src={imageUrl} alt="avatar" className={cx("avatar")} />
       ) : (
         uploadButton
       )}

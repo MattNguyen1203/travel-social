@@ -1,0 +1,226 @@
+.sidebar {
+  position: fixed;
+  left: var(--side-left);
+  width: var(--side-width);
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  background: linear-gradient(
+    180deg,
+    rgba(40, 40, 40, 0.8) 0%,
+    rgba(41, 45, 52, 0.450219) 98.97%,
+    rgba(40, 40, 40, 0) 136.14%
+  );
+
+  .bg-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+    height: 11em;
+    border-radius: 3rem 3rem 0 0;
+    .img-BG {
+      width: 100%;
+      height: 100%;
+      border-radius: 3rem 3rem 0 0;
+      object-fit: cover;
+      cursor: pointer;
+    }
+    .bg-icon-container {
+      position: absolute;
+      top: 0;
+      left: 1rem;
+      font-size: 0.8em;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 0.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+
+      .bg-icon {
+        margin-left: 0.4rem;
+      }
+    }
+  }
+  .mask-img {
+    border-radius: 3rem 3rem 0 0;
+  }
+  .sidebar-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.5em;
+  }
+}
+
+.user-info,
+.vacation-detail,
+.route {
+  margin-bottom: 1.5em;
+}
+
+// css for user-info
+.user-info {
+  margin-top: -6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-index,
+.user-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-avatar {
+  .avatar {
+    border-radius: 1.5rem;
+  }
+  .fullname {
+    font-size: 1.1em;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .username {
+    color: var(--username-color);
+    font-size: 0.9em;
+    font-weight: 300;
+    font-style: italic;
+  }
+}
+
+.user-index {
+  .index {
+    font-size: 1.2em;
+  }
+
+  .index-title {
+    font-size: 0.9em;
+    font-style: italic;
+    color: #736060;
+  }
+}
+
+// css for vacation detail
+
+.vacation-title {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+
+  .title-icon {
+    margin-left: 1rem;
+    font-size: 0.8em;
+    cursor: pointer;
+  }
+}
+
+.vacation-info {
+  line-height: 2;
+
+  .vacation-name,
+  .timeline {
+    display: flex;
+    align-items: center;
+    span {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  .status {
+    span {
+      text-transform: capitalize;
+    }
+  }
+  span {
+    font-size: 0.95em;
+    font-style: italic;
+    font-weight: 200;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+  }
+
+  .icon {
+    margin-right: 1.5em;
+  }
+
+  .memberList {
+    padding: 0 0.4rem 0.4rem 0;
+    &:hover {
+      border-bottom: 1px solid rgb(248, 244, 239);
+    }
+  }
+}
+
+// css for route
+
+.route {
+  text-align: center;
+  line-height: 2.5;
+  div {
+    font-size: 0.9em;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+  }
+
+  div:hover,
+  .active {
+    background: #23262b;
+    border-radius: 2rem;
+    color: #d2ae68;
+    font-weight: 600;
+  }
+}
+// delete modal
+.delete-modal {
+  width: fit-content;
+  min-height: 10rem;
+}
+.modal-content {
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+.btn-container {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+
+  button {
+    width: 50%;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+
+    &:nth-child(1) {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      background-color: rgb(2, 58, 2);
+
+      &:hover {
+        background-color: rgb(16, 207, 16);
+      }
+
+      .loading-del {
+        div {
+          width: 3rem;
+          height: 1rem;
+        }
+      }
+    }
+    &:nth-child(2) {
+      background-color: rgb(85, 1, 1);
+
+      &:hover {
+        background-color: red;
+      }
+    }
+  }
+}

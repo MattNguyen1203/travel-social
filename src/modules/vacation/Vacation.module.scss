@@ -1,0 +1,55 @@
+.wrapper {
+  --side-width: 20em;
+  --side-left: 4em;
+  min-height: 90vh;
+  padding: 2rem 0;
+  background-color: #1a1a1a;
+  font-size: 1.6rem;
+  overflow-x: hidden;
+}
+
+.timeline-res {
+  position: fixed;
+  right: 5rem;
+  bottom: 10vh;
+  padding: 1rem 1.5rem;
+  font-size: 2rem;
+  background-color: rgb(209, 60, 60);
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.drawer {
+  background-color: #1a1a1a;
+}
+
+// responsive
+@media (max-width: 1500px) {
+  .wrapper {
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .wrapper {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .wrapper {
+    --side-width: 18em;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    font-size: 1.3rem;
+  }
+}

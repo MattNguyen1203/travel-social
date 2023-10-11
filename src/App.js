@@ -1,11 +1,24 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { createBrowserHistory } from "history";
 import { publicRoutes } from "./routes";
-i;
+import { useDispatch } from "react-redux";
+import { updateSize } from "./store/slices/generalSlice";
 
 function App() {
   const history = createBrowserHistory();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    function handleWindowResize() {
+      dispatch(updateSize({ height: window.innerHeight, width: window.innerWidth }));
+    }
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
 
   return (
     <Router history={history}>
@@ -37,8 +50,17 @@ function App() {
                 {childArr !== undefined &&
                   childArr.map((item, index) => {
                     const Child = item.component;
+                    const ChildLayout = item.layout ? item.layout : Fragment;
                     return (
-                      <Route key={index} path={item.path} element={<Child />} />
+                      <Route
+                        key={index}
+                        path={item.path}
+                        element={
+                          <ChildLayout>
+                            <Child />
+                          </ChildLayout>
+                        }
+                      />
                     );
                   })}
               </Route>

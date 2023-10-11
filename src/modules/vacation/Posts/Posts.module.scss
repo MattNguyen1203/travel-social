@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  width: 40%;
+  margin: auto;
+}
+
+.create-post {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: center;
+  background: #282828;
+  border-radius: 10px;
+
+  div {
+    flex: 1;
+    background: #222;
+    padding: 2rem 2rem;
+    color: #fff;
+    font-weight: 200;
+    font-size: 1em;
+    font-style: italic;
+    border-radius: 25px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .wrapper {
+    width: calc(100vw - var(--side-width) - (var(--side-left) * 3));
+    margin-left: auto;
+    margin-right: 4em;
+  }
+  .container {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+    padding: 0 3em;
+  }
+  .container {
+    width: 100%;
+  }
+}
